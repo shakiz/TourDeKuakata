@@ -1,4 +1,4 @@
-package com.shakil.tourdekuakata;
+package com.shakil.tourdekuakata.utils;
 
 import android.app.Activity;
 import android.content.Context;
@@ -7,6 +7,8 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import com.shakil.tourdekuakata.R;
 
 public class UX {
     private Context context;

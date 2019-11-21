@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/places"
+        android:icon="@drawable/ic_beach"
+        android:title="@string/places"
+        android:checked="true"/>
+
+    <item
+        android:id="@+id/hotels"
+        android:icon="@drawable/ic_beach"
+        android:title="@string/hotels"/>
+</menu>
