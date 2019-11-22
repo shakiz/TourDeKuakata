@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.PlacesFragment">
+    android:background="@color/md_white_1000"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".onboarding.MainActivity">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.smarteist.autoimageslider.SliderView
+        android:id="@+id/Slider"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/places" />
+        android:layout_margin="4dp"
+        app:sliderAnimationDuration="500"
+        app:sliderAutoCycleDirection="back_and_forth"
+        app:sliderAutoCycleEnabled="false"
+        app:sliderCircularHandlerEnabled="true"
+        app:sliderIndicatorAnimationDuration="500"
+        app:sliderIndicatorGravity="center_horizontal|bottom"
+        app:sliderIndicatorMargin="16dp"
+        app:sliderIndicatorOrientation="horizontal"
+        app:sliderIndicatorPadding="4dp"
+        app:sliderIndicatorRadius="1dp"
+        app:sliderIndicatorSelectedColor="@color/md_grey_600"
+        app:sliderIndicatorUnselectedColor="@color/md_blue_grey_400"
+        app:sliderScrollTimeInSec="1"
+        app:sliderStartAutoCycle="false" />
 
-</FrameLayout>
+
+
+</RelativeLayout>

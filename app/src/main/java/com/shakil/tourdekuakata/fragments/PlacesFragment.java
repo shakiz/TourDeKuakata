@@ -6,11 +6,19 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.shakil.tourdekuakata.R;
+import com.shakil.tourdekuakata.adapters.PlacesSliderAdapter;
+import com.shakil.tourdekuakata.models.Place;
+import com.smarteist.autoimageslider.IndicatorAnimations;
+import com.smarteist.autoimageslider.SliderAnimations;
+import com.smarteist.autoimageslider.SliderView;
+import java.util.ArrayList;
 
 public class PlacesFragment extends Fragment {
 
+    private SliderView sliderView;
+    private PlacesSliderAdapter sliderViewAdapter;
+    private ArrayList<Place> placeList;
 
     public PlacesFragment() {
     }
@@ -39,7 +47,34 @@ public class PlacesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_places, container, false);
+        View view = inflater.inflate(R.layout.fragment_places, container, false);
+        init(view);
+        createInstances();
+        bindUIWithComponents();
+        return view;
+    }
+
+    private void init(View view) {
+        sliderView = view.findViewById(R.id.Slider);
+    }
+
+    private void createInstances() {
+        placeList = new ArrayList<>();
+        sliderViewAdapter = new PlacesSliderAdapter(setData(),getContext());
+    }
+
+    private void bindUIWithComponents() {
+        sliderView.setSliderAdapter(sliderViewAdapter);
+        sliderView.setIndicatorAnimation(IndicatorAnimations.WORM);
+        sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
+        sliderView.setIndicatorPadding(8);
+    }
+
+    private ArrayList<Place> setData(){
+        placeList.add(new Place(R.drawable.places,getResources().getString(R.string.sample_description)));
+        placeList.add(new Place(R.drawable.places,getResources().getString(R.string.sample_description)));
+        placeList.add(new Place(R.drawable.places,getResources().getString(R.string.sample_description)));
+        return placeList;
     }
 
 

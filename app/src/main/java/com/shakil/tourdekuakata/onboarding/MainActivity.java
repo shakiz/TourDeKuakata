@@ -10,7 +10,6 @@ import com.shakil.tourdekuakata.R;
 import com.shakil.tourdekuakata.fragments.HotelsFragment;
 import com.shakil.tourdekuakata.fragments.PlacesFragment;
 import com.shakil.tourdekuakata.utils.Tools;
-
 public class MainActivity extends AppCompatActivity {
 //    private Toolbar toolbar;
     private Tools tools;
@@ -22,29 +21,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         
         init();
-//        setSupportActionBar(toolbar);
-//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                tools.exitApp();
-//            }
-//        });
-//
-//        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_left_arrow);
+        createInstances();
+        bindUIWithComponents();
 
     }
 
     private void init() {
-        createInstances();
-        bindUIWithComponents();
+        bubbleTabBar = findViewById(R.id.bubbleTabBar);
     }
 
     private void createInstances() {
         tools = new Tools(this);
-        bubbleTabBar = findViewById(R.id.bubbleTabBar);
     }
 
     private void bindUIWithComponents() {
+
         final FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.container, PlacesFragment.newInstance());
         transaction.addToBackStack(null);
@@ -62,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
     }
 
     private void navigateFragment(Fragment newInstance) {
@@ -70,5 +62,6 @@ public class MainActivity extends AppCompatActivity {
         transaction.addToBackStack(null);
         transaction.commit();
     }
+
 
 }
