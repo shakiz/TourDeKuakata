@@ -3,10 +3,74 @@
     <string name="places">Places</string>
     <string name="total_places">Total : 10</string>
     <string name="hotels">Hotels</string>
+    <string name="title">Title</string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="place_name">
+        <item>Daughter of Ocean</item>
+        <item>Local Delicacies</item>
+        <item>Bike Ride by the Beach</item>
+        <item>Fatrar Chor</item>
+        <item>Jhau Bon</item>
+        <item>Buddhist temples</item>
+        <item>Lebur Chor</item>
+        <item>Shutki Polli</item>
+    </string-array>
+
     <string name="sample_description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s,
         when an unknown printer took a galley of type and scrambled it to make a type specimen book.It is a long established fact that a reader will be distracted by the readable content of a
         page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here,
         making it look like readable English.</string>
+
+    <string name="kuakata">
+        Kuakata is the second largest Sea Beach in Bangladesh. This place known as Daughter of Ocean. Kuakata beach is a sandy expanse 18 kilometres long and 3 kilometres wide.
+        This is place is so amazingly beautiful and close-to-nature, yet not on top of every travelers to-do list – mainly because of the long journey one has to go through to reach this place.
+        Anyway, if you crave for natural beauty, wilderness, clean sandy beaches and cheap sea-side sea food then Kuakata is a must visit place for you. It will take you around 7-12 hours to reach
+        the place from Dhaka and you can do so by bus or launch. There are plenty of hotels and restaurants near the beach, not very fancy – but very friendly and delicious none the less.
+        You may need to prebook your hotel in peak tourist season, but in other times it should be fine to just show up and book on the spot.
+    </string>
+
+    <string name="local_delicacies">
+        Try local seafood delicacies, cooked in their own different way. You will get freshly caught raw fish like coral, poa, lakkha, prawn, hilsha, crabs and lobsters in
+        most of the restaurants near the mainroad. You will also find small barbecue stands near Lebur Chor – 5 kilometers west from the main beach where they will
+        cook fresh fish and crab in front of you and serve you on the beach. But, before buying anything, be sure about the price. First, confirm the price, and then place the order.
+        You will also get coconuts at a very cheap price – almost half the price of what you will be charged in Dhaka.
+    </string>
+
+    <string name="bike_ride">
+        If you don’t do this you will miss half the fun of Kuakata. I mentioned about the bikes at the beginning of this article. You can hop on any of these bikes (from your hotel or town center)
+        and the driver/guide will take you to some breathtaking places along the beach. This generally covers Kauar Chor, Lebur Chor, Red Crab Beach, mangrove forest etc. But to me the 15-20 kilometer
+        ride along the beach itself was simply the best. You can truly feel the raw beauty of the nature. If you stop at different spots then it can take around 2-4 hours to complete this ride.
+        A bike can carry maximum 2 passengers.
+    </string>
+    
+    <string name="fatrar_chor">
+        Fatra’r Chor (Fatra’s Island) is a popular tourist spot near Kuakata beach. It is a part of the world’s largest mangrove forest Sundarban.
+        Fatrar Bon or chor is a comparatively big forest in Kuakata. A traveler has to hire an engine boat from Lebur Chor to visit the Fatrar Chor.
+        It will possibly take a one hour boat journey to go there. You should enter the forest after having the authorization from the forest camp. The wild birds, a number of monkeys,
+        some rabbit, deer are found in this part of the mangrove forest.
+    </string>
+
+    <string name="jhau_bon">
+        This is a mangrove and evergreen forest in Kuakata. It is situated on the eastern end on the beach. The best means to reach the forest is a bike or by foot,
+        by the side of the beach. The most gorgeous place at Gangamoti Reserved Forest is the Lake. Technically, the forest is the further part of the Sundarban. The area protects the
+        coastline of Kuakata against tidal surges. It also provides a chance to view a little mangrove jungle. There is a Jhau Bon situated near this which you can visit too.
+    </string>
+
+    <string name="buddhist_temples">
+        Some Buddhist temples with immense cultural heritages are there in Kuakata. There is a 100 year old Buddha Idol in Sheema Mandir, Keranipara. This temple is made from eight special metals.
+        The statue of Gautama Buddha in Kuakata Buddhist Temple is the biggest in the South Asia. There is a well about 200 years old, might have to look at this also. Keep in mind that you would have
+        to remove your shoes before entering the temple. You can reach this place on bike during your 2-4 hour all inclusive bike trip.
+    </string>
+
+    <string name="lebur_chor">
+        Just 5 km from the main beach, Lebur chor is another tourist attraction. Locally also branded as Nembur chor or Lembur chor. The approximate area of this place is about 1000 acres.
+        It is a small fraction of Sundarban but currently it is separated from Sundarban. It is bursting with natural gorgeousness and this overall place is completely outstanding.
+        You can enjoy a boat ride in the jungle or beach-side BBQ here.
+    </string>
+
+    <string name="shutki_polli">
+        It is in the west and 4 km away from the beach. While returning from of Lebur chor, you should visit shutki polli. There are lots of fishing villages nearby and you can buy fresh fish
+        or dried fish directly from the fishermen. You can also see the whole process of turning a fish into Shutki or dried fish.
+    </string>
+
 </resources>

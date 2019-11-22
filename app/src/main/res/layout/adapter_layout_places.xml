@@ -6,6 +6,19 @@
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/md_grey_600"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_margin="4dp"
+        android:padding="8dp"/>
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="0dp"

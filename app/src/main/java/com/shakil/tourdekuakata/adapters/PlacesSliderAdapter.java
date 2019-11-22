@@ -33,6 +33,7 @@ public class PlacesSliderAdapter extends SliderViewAdapter<PlacesSliderAdapter.S
     public void onBindViewHolder(SliderAdapterVH viewHolder, int position) {
         Place place = placeList.get(position);
         viewHolder.Description.setText(place.getDescription());
+        viewHolder.Title.setText(place.getTitle());
         Glide.with(context).load(place.getIcon()).into(viewHolder.Icon);
     }
 
@@ -45,12 +46,13 @@ public class PlacesSliderAdapter extends SliderViewAdapter<PlacesSliderAdapter.S
 
         View itemView;
         ImageView Icon;
-        TextView Description;
+        TextView Description,Title;
 
         public SliderAdapterVH(View itemView) {
             super(itemView);
             Icon = itemView.findViewById(R.id.Icon);
             Description = itemView.findViewById(R.id.Description);
+            Title = itemView.findViewById(R.id.Title);
             this.itemView = itemView;
         }
     }
