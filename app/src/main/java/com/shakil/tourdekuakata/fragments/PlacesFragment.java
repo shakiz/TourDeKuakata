@@ -73,13 +73,13 @@ public class PlacesFragment extends Fragment {
     }
 
     private ArrayList<Place> setData(){
-        placeList.add(new Place(placeTitleArray[0],R.drawable.places,getResources().getString(R.string.kuakata)));
+        placeList.add(new Place(placeTitleArray[0],R.drawable.kuakata,getResources().getString(R.string.kuakata)));
         placeList.add(new Place(placeTitleArray[1],R.drawable.places,getResources().getString(R.string.local_delicacies)));
         placeList.add(new Place(placeTitleArray[2],R.drawable.places,getResources().getString(R.string.bike_ride)));
-        placeList.add(new Place(placeTitleArray[3],R.drawable.places,getResources().getString(R.string.fatrar_chor)));
+        placeList.add(new Place(placeTitleArray[3],R.drawable.fatrar_chor,getResources().getString(R.string.fatrar_chor)));
         placeList.add(new Place(placeTitleArray[4],R.drawable.places,getResources().getString(R.string.jhau_bon)));
-        placeList.add(new Place(placeTitleArray[5],R.drawable.places,getResources().getString(R.string.buddhist_temples)));
-        placeList.add(new Place(placeTitleArray[6],R.drawable.places,getResources().getString(R.string.lebur_chor)));
+        placeList.add(new Place(placeTitleArray[5],R.drawable.buddhist_temple,getResources().getString(R.string.buddhist_temples)));
+        placeList.add(new Place(placeTitleArray[6],R.drawable.lebur_chor,getResources().getString(R.string.lebur_chor)));
         placeList.add(new Place(placeTitleArray[7],R.drawable.places,getResources().getString(R.string.shutki_polli)));
         return placeList;
     }
