@@ -11,14 +11,18 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="32dp"
+        app:cardCornerRadius="12dp"
         android:elevation="4dp"
+        android:padding="4dp"
+        android:clickable="true"
         android:layout_margin="8dp"
+        android:foreground="?attr/selectableItemBackground"
         android:translationZ="4dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:padding="4dp"
             android:orientation="horizontal">
 
             <ImageView
@@ -50,7 +54,7 @@
                     android:id="@+id/MobileNumber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="4dp"
                     android:drawableLeft="@drawable/ic_phone"
                     android:drawablePadding="4dp"
                     android:layout_gravity="center"

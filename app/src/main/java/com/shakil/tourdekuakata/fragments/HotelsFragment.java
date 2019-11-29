@@ -17,6 +17,8 @@ public class HotelsFragment extends Fragment {
     private RecyclerView recyclerView;
     private HotelListAdapter hotelListAdapter;
     private ArrayList<Hotel> hotelList;
+    private String[] hotelNames;
+    private String[] phoneNumbersHotel;
 
     public HotelsFragment() {
     }
@@ -54,6 +56,8 @@ public class HotelsFragment extends Fragment {
 
     private void createInstances() {
         hotelList = new ArrayList<>();
+        hotelNames = getResources().getStringArray(R.array.hotel_names);
+        phoneNumbersHotel = getResources().getStringArray(R.array.phone_numbers);
     }
 
     private void init(View view) {
@@ -65,10 +69,17 @@ public class HotelsFragment extends Fragment {
     }
 
     private void setAdapter() {
-        hotelListAdapter = new HotelListAdapter(hotelList,getContext());
+        hotelListAdapter = new HotelListAdapter(getData(),getContext());
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(hotelListAdapter);
         hotelListAdapter.notifyDataSetChanged();
+    }
+
+    private ArrayList<Hotel> getData() {
+        for(int index=0;index<hotelNames.length;index++){
+            hotelList.add(new Hotel(R.drawable.ic_hotel,phoneNumbersHotel[index],hotelNames[index]));
+        }
+        return hotelList;
     }
 
 
