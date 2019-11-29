@@ -16,6 +16,66 @@
         <item>Shutki Polli</item>
     </string-array>
 
+    <string-array name="hotel_names">
+        <item>পর্যটন হলিডে হোমস্</item>
+        <item>যুব পান্থ নিবাস</item>
+        <item>জেলা পরিষদ ভিআইপি ডাক বাংলো</item>
+        <item>ঝিনুক ডাক বাংলো</item>
+        <item>হোটেল সৈকত</item>
+        <item>হোটেল নিলাঞ্জনা লিঃ</item>
+        <item>হোটেল কুয়াকাটা স্কাই প্যালেস</item>
+        <item>হোটেল কুয়াকাটা ইন</item>
+        <item>হোটেল মোহনা ইন্টারন্যাশনাল লিঃ</item>
+        <item>হোটেল সি প্যালেস</item>
+        <item>বনানী প্যালেস</item>
+        <item>আনন্দবাড়ী গেস্ট হাউজ</item>
+        <item>সাগর কন্যা রিসোর্ট</item>
+        <item>বেঙ্গল গেস্ট হাউজ</item>
+        <item>কুয়াকাটা গেস্ট হাউজ</item>
+        <item>ওয়েস্টার্ন মোটেল</item>
+        <item>হোটেল ক্যাসেল ড্রিম</item>
+        <item>হোটেল গ্রেভার ইন</item>
+        <item>হোটেল মিড নাইট</item>
+        <item>কটেজ সুইট হোম</item>
+        <item>হোটেল স্নেহা</item>
+        <item>হোটেল সাগর</item>
+        <item>হোটেল রনি</item>
+        <item>হোটেল সাগর ছায়া</item>
+        <item>হোটেল সি ভিউ</item>
+        <item>হোটেল সমুদ্র বিলাস</item>
+        <item>হোটেল বিচ হ্যাভেন</item>
+    </string-array>
+
+    <string-array name="phone_numbers">
+        <item>০১৭৩২-০৯১৫৯৯</item>
+        <item>০১৭৩২-০৯১৫৯৯</item>
+        <item>০১৫৫৬৪৫০১৭২-৭৩</item>
+        <item>০১৫৫৬-৪৫০১৭২</item>
+        <item>০১৭১৩-৯৫৪৯০৮</item>
+        <item>০১৭১২-৯২৭৯০৪</item>
+        <item>০১৯১৫-২২৯৯২৩</item>
+        <item>০১৭৫০-০০৮১৭৭</item>
+        <item>০১৭১৫-১৫৪৯৬৪</item>
+        <item>০১৭৩০-০৯৩৩৬৩</item>
+        <item>০১৭১৩-৬৭৪১৮৯</item>
+        <item>০১৭৬২-১০৩০৩০</item>
+        <item>০১৭১১-১৮১৭৯৮</item>
+        <item>০১৮১১-৪৪৫১৩০</item>
+        <item>০১৭৩০-১৮৯১৫২</item>
+        <item>০১৬৮৩-৫৪০০৬৪</item>
+        <item>০১৭১৬-৮৪৮৪০</item>
+        <item>০১৮১৬-০৪৮৭৩২</item>
+        <item>০১৭১৫-০৬৬৯২৮</item>
+        <item>০১৬৭০-৮০৪০৩৮</item>
+        <item>০১৭১৬-৩২৬৩৫৩</item>
+        <item>01712485808</item>
+        <item>০১৭১০-৯৪১৪৭৪</item>
+        <item>০১৭৪৪-২০৮০৭৭</item>
+        <item>০১৭১৬-২৬৮০০৫</item>
+        <item>০১৭১৩-৯৫২৫৩০</item>
+        <item>০১৭৩০০২১৩৪১</item>
+    </string-array>
+
     <string name="sample_description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s,
         when an unknown printer took a galley of type and scrambled it to make a type specimen book.It is a long established fact that a reader will be distracted by the readable content of a
         page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here,
@@ -72,5 +132,7 @@
         It is in the west and 4 km away from the beach. While returning from of Lebur chor, you should visit shutki polli. There are lots of fishing villages nearby and you can buy fresh fish
         or dried fish directly from the fishermen. You can also see the whole process of turning a fish into Shutki or dried fish.
     </string>
+    <string name="hotel_name">Hotel Name</string>
+    <string name="mobile_number">Mobile Number</string>
 
 </resources>
