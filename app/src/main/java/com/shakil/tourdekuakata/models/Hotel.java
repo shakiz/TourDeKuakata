@@ -1,4 +1,4 @@
-package com.shakil.tourdekuakata.adapters;
+package com.shakil.tourdekuakata.models;
 
 public class Hotel {
     private int Icon;

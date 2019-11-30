@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.shakil.tourdekuakata.R;
-import com.shakil.tourdekuakata.adapters.Hotel;
+import com.shakil.tourdekuakata.models.Hotel;
 import com.shakil.tourdekuakata.adapters.HotelListAdapter;
 import java.util.ArrayList;
 
@@ -19,7 +19,6 @@ public class HotelsFragment extends Fragment {
     private ArrayList<Hotel> hotelList;
     private String[] hotelNames;
     private String[] phoneNumbersHotel;
-
     public HotelsFragment() {
     }
 
@@ -81,7 +80,6 @@ public class HotelsFragment extends Fragment {
         }
         return hotelList;
     }
-
 
     @Override
     public void onDetach() {

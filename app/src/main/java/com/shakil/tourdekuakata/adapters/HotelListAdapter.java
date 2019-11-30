@@ -10,16 +10,22 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.shakil.tourdekuakata.R;
+import com.shakil.tourdekuakata.models.Hotel;
 import java.util.ArrayList;
 
 public class HotelListAdapter extends RecyclerView.Adapter<HotelListAdapter.ViewHolder> {
 
     private ArrayList<Hotel> hotelList;
     private Context context;
+    private ItemClickListener onItemClickListener;
 
     public HotelListAdapter(ArrayList<Hotel> hotelList, Context context) {
         this.hotelList = hotelList;
         this.context = context;
+    }
+
+    public void setItemClickListener(ItemClickListener clickListener) {
+        onItemClickListener = clickListener;
     }
 
     @NonNull
@@ -51,4 +57,11 @@ public class HotelListAdapter extends RecyclerView.Adapter<HotelListAdapter.View
             MobileNumber = itemView.findViewById(R.id.MobileNumber);
         }
     }
+
+    public interface ItemClickListener {
+        void onItemClick(View view, int position);
+    }
+
+
+
 }
