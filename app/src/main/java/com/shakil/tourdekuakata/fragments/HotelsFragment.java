@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
 import com.shakil.tourdekuakata.R;
 import com.shakil.tourdekuakata.models.Hotel;
 import com.shakil.tourdekuakata.adapters.HotelListAdapter;
@@ -68,7 +70,13 @@ public class HotelsFragment extends Fragment {
     }
 
     private void setAdapter() {
-        hotelListAdapter = new HotelListAdapter(getData(),getContext());
+        hotelListAdapter = new HotelListAdapter(getData(), getContext(), new HotelListAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(Hotel hotel) {
+                Toast.makeText(getContext(),""+hotel.getHotelName(),Toast.LENGTH_SHORT).show();
+            }
+        });
+
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(hotelListAdapter);
         hotelListAdapter.notifyDataSetChanged();
