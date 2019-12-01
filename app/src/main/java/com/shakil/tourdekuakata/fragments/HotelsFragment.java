@@ -1,8 +1,14 @@
 package com.shakil.tourdekuakata.fragments;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,7 +18,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+import com.bumptech.glide.Glide;
 import com.shakil.tourdekuakata.R;
 import com.shakil.tourdekuakata.models.Hotel;
 import com.shakil.tourdekuakata.adapters.HotelListAdapter;
@@ -29,7 +39,8 @@ public class HotelsFragment extends Fragment {
     private Dialog itemDialog;
     private RelativeLayout dialogLayout;
     private AlertDialog progressDialog;
-
+    private TextView HotelName,MobileNumber;
+    private ImageView HotelIcon;
 
     public HotelsFragment() {
     }
@@ -87,7 +98,7 @@ public class HotelsFragment extends Fragment {
                     setAdapter();
                 }
             }
-        }, 3000);
+        }, 1000);
 
     }
 
@@ -95,7 +106,7 @@ public class HotelsFragment extends Fragment {
         hotelListAdapter = new HotelListAdapter(getData(), getContext(), new HotelListAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Hotel hotel) {
-                showDialog();
+                showDialog(hotel);
             }
         });
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -110,18 +121,47 @@ public class HotelsFragment extends Fragment {
         return hotelList;
     }
 
-    private void showDialog() {
+    private void showDialog(Hotel hotel) {
         itemDialog = new Dialog(getContext());
         itemDialog.setContentView(R.layout.hotel_details_layout);
         customViewInit(itemDialog);
         itemDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         Animation a = AnimationUtils.loadAnimation(itemDialog.getContext(), R.anim.push_up_in);
         dialogLayout.startAnimation(a);
+        setCustomLayoutData(hotel);
         itemDialog.show();
+
+        MobileNumber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_DENIED){
+                    Toast.makeText(getContext(),R.string.permission_request,Toast.LENGTH_LONG).show();
+                    ActivityCompat.requestPermissions(getActivity(),new String[]{Manifest.permission.CALL_PHONE},0);
+                }
+                else{
+                    makeCall(MobileNumber.getText().toString());
+                }
+            }
+        });
+    }
+
+    private void setCustomLayoutData(Hotel hotel) {
+        HotelName.setText(hotel.getHotelName());
+        MobileNumber.setText(hotel.getMobileNumber());
+        Glide.with(getContext()).load(hotel.getIcon()).into(HotelIcon);
     }
 
     private void customViewInit(Dialog itemDialog) {
         dialogLayout = itemDialog.findViewById(R.id.hotel_details_layout);
+        HotelName = itemDialog.findViewById(R.id.HotelName);
+        MobileNumber = itemDialog.findViewById(R.id.MobileNumber);
+        HotelIcon = itemDialog.findViewById(R.id.HotelImage);
+    }
+
+    private void makeCall(String number){
+        Intent intent = new Intent(Intent.ACTION_CALL);
+        intent.setData(Uri.parse("tel:" +number));
+        startActivity(intent);
     }
 
     @Override
