@@ -1,18 +1,23 @@
 package com.shakil.tourdekuakata.fragments;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
-
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.RelativeLayout;
 import com.shakil.tourdekuakata.R;
 import com.shakil.tourdekuakata.models.Hotel;
 import com.shakil.tourdekuakata.adapters.HotelListAdapter;
 import java.util.ArrayList;
+import dmax.dialog.SpotsDialog;
 
 public class HotelsFragment extends Fragment {
 
@@ -21,9 +26,13 @@ public class HotelsFragment extends Fragment {
     private ArrayList<Hotel> hotelList;
     private String[] hotelNames;
     private String[] phoneNumbersHotel;
+    private Dialog itemDialog;
+    private RelativeLayout dialogLayout;
+    private AlertDialog progressDialog;
+
+
     public HotelsFragment() {
     }
-
 
     public static HotelsFragment newInstance(String param1, String param2) {
         HotelsFragment fragment = new HotelsFragment();
@@ -59,6 +68,8 @@ public class HotelsFragment extends Fragment {
         hotelList = new ArrayList<>();
         hotelNames = getResources().getStringArray(R.array.hotel_names);
         phoneNumbersHotel = getResources().getStringArray(R.array.phone_numbers);
+        progressDialog = new SpotsDialog(getContext(),R.style.CustomProgressDialog);
+
     }
 
     private void init(View view) {
@@ -66,17 +77,27 @@ public class HotelsFragment extends Fragment {
     }
 
     private void bindUIWithComponents() {
-        setAdapter();
+        progressDialog.show();
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                if (progressDialog.isShowing()) {
+                    progressDialog.dismiss();
+                    setAdapter();
+                }
+            }
+        }, 3000);
+
     }
 
     private void setAdapter() {
         hotelListAdapter = new HotelListAdapter(getData(), getContext(), new HotelListAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Hotel hotel) {
-                Toast.makeText(getContext(),""+hotel.getHotelName(),Toast.LENGTH_SHORT).show();
+                showDialog();
             }
         });
-
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(hotelListAdapter);
         hotelListAdapter.notifyDataSetChanged();
@@ -87,6 +108,20 @@ public class HotelsFragment extends Fragment {
             hotelList.add(new Hotel(R.drawable.ic_hotel,phoneNumbersHotel[index],hotelNames[index]));
         }
         return hotelList;
+    }
+
+    private void showDialog() {
+        itemDialog = new Dialog(getContext());
+        itemDialog.setContentView(R.layout.hotel_details_layout);
+        customViewInit(itemDialog);
+        itemDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        Animation a = AnimationUtils.loadAnimation(itemDialog.getContext(), R.anim.push_up_in);
+        dialogLayout.startAnimation(a);
+        itemDialog.show();
+    }
+
+    private void customViewInit(Dialog itemDialog) {
+        dialogLayout = itemDialog.findViewById(R.id.hotel_details_layout);
     }
 
     @Override
