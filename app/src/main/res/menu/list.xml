@@ -9,4 +9,9 @@
         android:id="@+id/hotels"
         android:icon="@drawable/ic_beach"
         android:title="@string/hotels"/>
+
+    <item
+        android:id="@+id/gallery"
+        android:icon="@drawable/ic_beach"
+        android:title="@string/gallery"/>
 </menu>

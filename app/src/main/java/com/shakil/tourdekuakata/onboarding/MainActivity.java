@@ -7,6 +7,7 @@ import android.os.Bundle;
 import com.fxn.BubbleTabBar;
 import com.fxn.OnBubbleClickListener;
 import com.shakil.tourdekuakata.R;
+import com.shakil.tourdekuakata.fragments.GalleryFragment;
 import com.shakil.tourdekuakata.fragments.HotelsFragment;
 import com.shakil.tourdekuakata.fragments.PlacesFragment;
 import com.shakil.tourdekuakata.utils.Tools;
@@ -50,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.hotels:
                         navigateFragment(HotelsFragment.newInstance());
                         return;
+                    case R.id.gallery:
+                        navigateFragment(GalleryFragment.newInstance());
                 }
             }
         });
@@ -64,4 +67,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        tools.exitApp();
+    }
 }
