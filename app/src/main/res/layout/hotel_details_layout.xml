@@ -43,7 +43,7 @@
                         android:layout_marginBottom="4dp"
                         android:layout_width="200dp"
                         android:layout_height="200dp"
-                        android:src="@drawable/places"
+                        android:src="@drawable/kuakata_15"
                         android:layout_gravity="center"/>
 
                     <TextView

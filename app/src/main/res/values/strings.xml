@@ -122,5 +122,8 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="photo_owner_name">Nafi Sami</string>
+    <string name="profile_link">Visit Profile</string>
+    <string name="passioante_photographer">Passionate Photgrapher</string>
 
 </resources>

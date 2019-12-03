@@ -10,9 +10,78 @@
     android:focusableInTouchMode="true"
     tools:context=".onboarding.MainActivity">
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        android:elevation="4dp"
+        android:layout_margin="4dp"
+        app:cardBackgroundColor="@color/md_white_1000"
+        app:cardUseCompatPadding="true"
+        android:id="@+id/ProfileCard">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="4dp"
+            android:layout_margin="4dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="4dp"
+                android:layout_margin="4dp"
+                android:src="@drawable/kuakata"
+                app:civ_border_width="1dp"
+                app:civ_border_color="@color/md_grey_600"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:orientation="vertical"
+                android:layout_gravity="center|left"
+                android:gravity="center|left">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/md_grey_600"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:text="@string/photo_owner_name"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textSize="16sp"
+                    android:text="@string/passioante_photographer"/>
+                <TextView
+                    android:id="@+id/ProfileUrl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:paddingRight="4dp"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:linksClickable="true"
+                    android:autoLink="web"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/md_blue_grey_800"
+                    android:clickable="true"
+                    android:text="@string/profile_link"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/ProfileCard"
         android:layout_margin="4dp"
         tools:listitem="@layout/adapter_layout_galley_item"
         android:id="@+id/mRecyclerView"/>

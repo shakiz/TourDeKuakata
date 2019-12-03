@@ -1,6 +1,8 @@
 package com.shakil.tourdekuakata.fragments;
 
 import android.app.AlertDialog;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,6 +13,7 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import com.shakil.tourdekuakata.R;
 import com.shakil.tourdekuakata.adapters.GalleryListAdapter;
 import com.shakil.tourdekuakata.models.GalleyItem;
@@ -23,6 +26,7 @@ public class GalleryFragment extends Fragment {
     private GalleryListAdapter galleryListAdapter;
     private ArrayList<GalleyItem> galleyItemList;
     private AlertDialog progressDialog;
+    private TextView profileTextView;
 
     public GalleryFragment() {
 
@@ -74,8 +78,16 @@ public class GalleryFragment extends Fragment {
                 }
             }
         }, 1000);
-    }
 
+        profileTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                browserIntent.setData(Uri.parse("https://121clicks.com/photo-stories/life-in-kuakata-by-nafi-sami"));
+                startActivity(browserIntent);
+            }
+        });
+    }
     private void setAdapter() {
         galleryListAdapter = new GalleryListAdapter(getData(), getContext(), new GalleryListAdapter.OnItemClickListener() {
             @Override
@@ -110,5 +122,6 @@ public class GalleryFragment extends Fragment {
 
     private void init(View view) {
         recyclerView = view.findViewById(R.id.mRecyclerView);
+        profileTextView = view.findViewById(R.id.ProfileUrl);
     }
 }
