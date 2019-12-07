@@ -1,17 +1,23 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/places"
-        android:icon="@drawable/ic_beach"
-        android:title="@string/places"
-        android:checked="true"/>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item
-        android:id="@+id/hotels"
-        android:icon="@drawable/ic_beach"
-        android:title="@string/hotels"/>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/places"
+            android:icon="@drawable/ic_beach_sun"
+            android:title="@string/places"
+            android:checked="true"/>
 
-    <item
-        android:id="@+id/gallery"
-        android:icon="@drawable/ic_beach"
-        android:title="@string/gallery"/>
+        <item
+            android:id="@+id/hotels"
+            android:icon="@drawable/ic_gallery"
+            android:title="@string/hotels"/>
+
+        <item
+            android:id="@+id/gallery"
+            android:icon="@drawable/ic_place_location"
+            android:title="@string/gallery"/>
+    </group>
+
+
 </menu>

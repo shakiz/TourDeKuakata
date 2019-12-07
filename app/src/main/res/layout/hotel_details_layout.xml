@@ -41,8 +41,9 @@
                         android:id="@+id/HotelImage"
                         android:layout_marginTop="4dp"
                         android:layout_marginBottom="4dp"
-                        android:layout_width="200dp"
-                        android:layout_height="200dp"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:padding="8dp"
                         android:src="@drawable/kuakata_15"
                         android:layout_gravity="center"/>
 
@@ -104,6 +105,7 @@
                             android:layout_gravity="center"/>
 
                         <TextView
+                            android:id="@+id/FacebookPage"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"

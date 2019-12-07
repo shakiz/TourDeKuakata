@@ -41,7 +41,7 @@ public class HotelsFragment extends Fragment {
     private Dialog itemDialog;
     private RelativeLayout dialogLayout;
     private AlertDialog progressDialog;
-    private TextView HotelName,MobileNumber;
+    private TextView HotelName,MobileNumber,FacebookPage;
     private ImageView HotelIcon;
 
     public HotelsFragment() {
@@ -149,6 +149,13 @@ public class HotelsFragment extends Fragment {
                 }
             }
         });
+
+        FacebookPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(),"Coming soon...",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void setCustomLayoutData(Hotel hotel) {
@@ -161,6 +168,7 @@ public class HotelsFragment extends Fragment {
         dialogLayout = itemDialog.findViewById(R.id.hotel_details_layout);
         HotelName = itemDialog.findViewById(R.id.HotelName);
         MobileNumber = itemDialog.findViewById(R.id.MobileNumber);
+        FacebookPage = itemDialog.findViewById(R.id.FacebookPage);
         HotelIcon = itemDialog.findViewById(R.id.HotelImage);
     }
 
