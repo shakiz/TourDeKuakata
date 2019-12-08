@@ -1,28 +1,25 @@
 package com.shakil.tourdekuakata.onboarding;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.view.MenuItem;
-import android.widget.Toast;
-
-import com.fxn.BubbleTabBar;
-import com.fxn.OnBubbleClickListener;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import android.view.View;
 import com.shakil.tourdekuakata.R;
 import com.shakil.tourdekuakata.fragments.GalleryFragment;
 import com.shakil.tourdekuakata.fragments.HotelsFragment;
 import com.shakil.tourdekuakata.fragments.PlacesFragment;
 import com.shakil.tourdekuakata.utils.Tools;
-import com.tbuonomo.morphbottomnavigation.MorphBottomNavigationView;
+import github.com.st235.lib_expandablebottombar.ExpandableBottomBar;
+import github.com.st235.lib_expandablebottombar.ExpandableBottomBarMenuItem;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function2;
 
 public class MainActivity extends AppCompatActivity {
 //    private Toolbar toolbar;
     private Tools tools;
-    private BubbleTabBar bubbleTabBar;
-    private MorphBottomNavigationView morphBottomNavigationView;
+    private ExpandableBottomBar bottomBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void init() {
         //bubbleTabBar = findViewById(R.id.bubbleTabBar);
-        morphBottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomBar = findViewById(R.id.bottomNavigationView);
     }
 
     private void createInstances() {
@@ -50,26 +47,17 @@ public class MainActivity extends AppCompatActivity {
         transaction.replace(R.id.container, PlacesFragment.newInstance());
         transaction.addToBackStack(null);
         transaction.commit();
-//        bubbleTabBar.addBubbleListener(new OnBubbleClickListener() {
-//            @Override
-//            public void onBubbleClick(int id) {
-//                switch (id){
-//                    case R.id.places:
-//                        navigateFragment(PlacesFragment.newInstance());
-//                        return;
-//                    case R.id.hotels:
-//                        navigateFragment(HotelsFragment.newInstance());
-//                        return;
-//                    case R.id.gallery:
-//                        navigateFragment(GalleryFragment.newInstance());
-//                }
-//            }
-//        });
 
-        morphBottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        bottomBar.addItems(new ExpandableBottomBarMenuItem.Builder(this)
+                .addItem(R.id.places, R.drawable.ic_places, R.string.places,  Color.DKGRAY)
+                .addItem(R.id.hotels, R.drawable.ic_hotel, R.string.hotels, Color.GRAY)
+                .addItem(R.id.gallery, R.drawable.ic_gallery, R.string.gallery, Color.GRAY)
+                .build());
+
+        bottomBar.setOnItemSelectedListener(new Function2<View, ExpandableBottomBarMenuItem, Unit>() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                int id = menuItem.getItemId();
+            public Unit invoke(View view, ExpandableBottomBarMenuItem expandableBottomBarMenuItem) {
+                int id = expandableBottomBarMenuItem.getItemId();
                 switch (id){
                     case R.id.places:
                         navigateFragment(PlacesFragment.newInstance());
@@ -81,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                         navigateFragment(GalleryFragment.newInstance());
                         break;
                 }
-                return false;
+                return null;
             }
         });
 

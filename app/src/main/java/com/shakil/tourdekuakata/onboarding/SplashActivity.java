@@ -45,7 +45,7 @@ public class SplashActivity extends AppCompatActivity {
                 startActivity(new Intent(SplashActivity.this,MainActivity.class));
                 Welcome.removeAnimation();
             }
-        }, 1500);
+        }, 1400);
     }
 
     private void createInstances() {

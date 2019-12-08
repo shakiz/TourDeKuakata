@@ -4,18 +4,15 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/places"
-            android:icon="@drawable/ic_beach_sun"
             android:title="@string/places"
             android:checked="true"/>
 
         <item
             android:id="@+id/hotels"
-            android:icon="@drawable/ic_gallery"
             android:title="@string/hotels"/>
 
         <item
             android:id="@+id/gallery"
-            android:icon="@drawable/ic_place_location"
             android:title="@string/gallery"/>
     </group>
 

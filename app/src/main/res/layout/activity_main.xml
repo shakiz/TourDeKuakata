@@ -43,33 +43,17 @@
                 android:layout_height="match_parent"
                 android:layout_above="@id/bottomNavigationView"/>
 
-<!--            <com.fxn.BubbleTabBar-->
-<!--                android:id="@+id/bubbleTabBar"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:background="@color/md_grey_100"-->
-<!--                android:layout_alignParentBottom="true"-->
-<!--                android:elevation="16dp"-->
-<!--                android:padding="4dp"-->
-<!--                app:bubbletab_menuResource="@menu/list"-->
-<!--                app:bubbletab_disabled_icon_color="@color/colorPrimaryDark"-->
-<!--                app:bubbletab_horizontal_padding="20dp"-->
-<!--                app:bubbletab_icon_size="20dp"-->
-<!--                app:bubbletab_title_size="16sp"-->
-<!--                app:bubbletab_vertical_padding="10dp">-->
-<!--            </com.fxn.BubbleTabBar>-->
 
-            <com.tbuonomo.morphbottomnavigation.MorphBottomNavigationView
+            <github.com.st235.lib_expandablebottombar.ExpandableBottomBar
                 android:id="@+id/bottomNavigationView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:backgroundTint="@color/colorPrimary"
-                app:menu="@menu/list"
-                app:morphCornerRadius="128dp"
-                app:morphItemRadius="64dp"
-                app:morphVerticalOffset="8dp"
+                android:layout_height="48dp"
                 android:layout_alignParentBottom="true"
-                style="@style/BottomNavigationView" />
+                app:exb_backgroundCornerRadius="8dp"
+                app:exb_backgroundColor="@color/md_grey_100"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
         </RelativeLayout>
 

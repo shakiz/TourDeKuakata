@@ -38,6 +38,9 @@ dependencies {
     //Bottom Tab Bar
     implementation 'com.fxn769:bubbletabbar:1.0.3'
     implementation 'com.tbuonomo:morph-bottom-navigation:1.0.1'
+    implementation 'com.github.st235:expandablebottombar:1.1.0'
+
+
 
     //Slider with indicator
     implementation 'com.github.smarteist:autoimageslider:1.3.2'
