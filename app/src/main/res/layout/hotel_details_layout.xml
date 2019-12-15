@@ -39,11 +39,10 @@
 
                     <ImageView
                         android:id="@+id/HotelImage"
-                        android:layout_marginTop="4dp"
-                        android:layout_marginBottom="4dp"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
+                        android:layout_width="112dp"
+                        android:layout_height="112dp"
                         android:padding="8dp"
+                        android:layout_margin="4dp"
                         android:src="@drawable/kuakata_15"
                         android:layout_gravity="center"/>
 
@@ -58,26 +57,27 @@
                         android:gravity="center"
                         android:text="যুব পান্থ নিবাস"/>
 
-                    <LinearLayout
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:orientation="horizontal"
                         android:layout_gravity="center"
                         android:gravity="center">
 
 
                         <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:layout_marginTop="2dp"
+                            android:id="@+id/CallIcon"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
                             android:src="@drawable/ic_call"
+                            android:layout_centerVertical="true"
                             android:layout_gravity="center"/>
 
                         <TextView
                             android:id="@+id/MobileNumber"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/CallIcon"
                             android:layout_gravity="center"
                             android:gravity="center"
                             android:clickable="true"
@@ -86,10 +86,13 @@
                             android:textSize="16sp"
                             android:text="@string/mobile_number_samples"/>
 
-                    </LinearLayout>
+                    </RelativeLayout>
 
 
-                    <LinearLayout
+                    <RelativeLayout
+                        android:id="@+id/FbPageLayout"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:clickable="true"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
@@ -99,8 +102,10 @@
 
 
                         <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
+                            android:id="@+id/FbIcon"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerVertical="true"
                             android:src="@drawable/ic_facebook"
                             android:layout_gravity="center"/>
 
@@ -108,6 +113,7 @@
                             android:id="@+id/FacebookPage"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/FbIcon"
                             android:layout_gravity="center"
                             android:gravity="center"
                             android:clickable="true"
@@ -118,7 +124,7 @@
                             android:textSize="16sp"/>
 
 
-                    </LinearLayout>
+                    </RelativeLayout>
 
                 </LinearLayout>
 

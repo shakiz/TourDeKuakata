@@ -3,6 +3,7 @@ package com.shakil.tourdekuakata.onboarding;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -10,15 +11,12 @@ import com.shakil.tourdekuakata.R;
 import com.shakil.tourdekuakata.fragments.GalleryFragment;
 import com.shakil.tourdekuakata.fragments.HotelsFragment;
 import com.shakil.tourdekuakata.fragments.PlacesFragment;
-import com.shakil.tourdekuakata.utils.Tools;
 import github.com.st235.lib_expandablebottombar.ExpandableBottomBar;
 import github.com.st235.lib_expandablebottombar.ExpandableBottomBarMenuItem;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 
 public class MainActivity extends AppCompatActivity {
-//    private Toolbar toolbar;
-    private Tools tools;
     private ExpandableBottomBar bottomBar;
 
     @Override
@@ -27,22 +25,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         
         init();
-        createInstances();
         bindUIWithComponents();
 
     }
 
     private void init() {
-        //bubbleTabBar = findViewById(R.id.bubbleTabBar);
         bottomBar = findViewById(R.id.bottomNavigationView);
     }
 
-    private void createInstances() {
-        tools = new Tools(this);
-    }
-
     private void bindUIWithComponents() {
-
         final FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.container, PlacesFragment.newInstance());
         transaction.addToBackStack(null);
@@ -86,6 +77,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        tools.exitApp();
+        exitApp();
+    }
+
+    public void exitApp(){
+        Intent exitIntent = new Intent(Intent.ACTION_MAIN);
+        exitIntent.addCategory(Intent.CATEGORY_HOME);
+        exitIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(exitIntent);
     }
 }

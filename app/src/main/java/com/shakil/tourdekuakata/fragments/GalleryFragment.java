@@ -1,6 +1,7 @@
 package com.shakil.tourdekuakata.fragments;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -13,7 +14,13 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 import com.shakil.tourdekuakata.R;
 import com.shakil.tourdekuakata.adapters.GalleryListAdapter;
 import com.shakil.tourdekuakata.models.GalleyItem;
@@ -27,6 +34,9 @@ public class GalleryFragment extends Fragment {
     private ArrayList<GalleyItem> galleyItemList;
     private AlertDialog progressDialog;
     private TextView profileTextView;
+    private Dialog itemDialog;
+    private RelativeLayout dialogLayout;
+    private ImageView imageView;
 
     public GalleryFragment() {
 
@@ -92,7 +102,7 @@ public class GalleryFragment extends Fragment {
         galleryListAdapter = new GalleryListAdapter(getData(), getContext(), new GalleryListAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(GalleyItem galleyItem) {
-
+                showDialog(galleyItem.getIcon());
             }
         });
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
@@ -118,6 +128,22 @@ public class GalleryFragment extends Fragment {
         galleyItemList.add(new GalleyItem(R.drawable.kuakata_18,"Landscape"));
         galleyItemList.add(new GalleyItem(R.drawable.kuakata_19,"Landscape"));
         return galleyItemList;
+    }
+
+    private void showDialog(int drawableRes) {
+        itemDialog = new Dialog(getContext());
+        itemDialog.setContentView(R.layout.image_view_layout);
+        customViewInit(itemDialog);
+        itemDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        Animation a = AnimationUtils.loadAnimation(itemDialog.getContext(), R.anim.push_up_in);
+        dialogLayout.startAnimation(a);
+        Glide.with(getContext()).load(drawableRes).into(imageView);
+        itemDialog.show();
+    }
+
+    private void customViewInit(Dialog itemDialog) {
+        dialogLayout = itemDialog.findViewById(R.id.dialogLayout);
+        imageView = itemDialog.findViewById(R.id.Image);
     }
 
     private void init(View view) {
