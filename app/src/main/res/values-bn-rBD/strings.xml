@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Tour De Kuakata</string>
-    <string name="places">Places</string>
+    <string name="app_name">সাগরকন্যা</string>
+    <string name="places">দর্শনীয় স্থানসমূহ</string>
     <string name="total_places">Total : 10</string>
-    <string name="hotels">Hotels</string>
+    <string name="hotels">হোটেল</string>
     <string name="title">Title</string>
 
     <string-array name="place_name">
@@ -117,5 +117,16 @@
 
     <string name="loading">Loading</string>
     <string name="mobile_number_samples" >০১৭৩০-১৮৯১৫২</string>
+
+    <string name="facebook_page">Facebook Page</string>
+    <string name="permission_request">Please Approve Permissions</string>
+    <string name="gallery">গ্যাল্যারি</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="photo_owner_name">Nafi Sami</string>
+    <string name="profile_link">Visit Profile</string>
+    <string name="passioante_photographer">Passionate Photgrapher</string>
+    <string name="welcome">স্বাগতম</string>
 
 </resources>

@@ -30,8 +30,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/welcome"
+            android:textStyle="bold"
             android:textColor="@color/md_white_1000"
-            android:textSize="48sp"
+            android:textSize="42sp"
             android:gravity="center" />
 
     </LinearLayout>

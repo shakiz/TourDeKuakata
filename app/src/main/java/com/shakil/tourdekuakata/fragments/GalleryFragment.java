@@ -19,7 +19,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
 import com.shakil.tourdekuakata.R;
 import com.shakil.tourdekuakata.adapters.GalleryListAdapter;
