@@ -143,7 +143,6 @@ public class HotelsFragment extends Fragment {
                 if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_DENIED){
                     Toast.makeText(getContext(),R.string.permission_request,Toast.LENGTH_LONG).show();
                     ActivityCompat.requestPermissions(getActivity(),new String[]{Manifest.permission.CALL_PHONE},0);
-                    makeCall(MobileNumber.getText().toString());
                 }
                 else{
                     makeCall(MobileNumber.getText().toString());
