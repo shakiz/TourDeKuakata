@@ -23,7 +23,8 @@
             android:layout_gravity="center"
             android:layout_margin="4dp"
             android:padding="8dp"
-            android:src="@drawable/ic_app_icon"/>
+            app:tint="@color/md_white_1000"
+            android:src="@drawable/ic_sun_umbrella"/>
 
         <in.codeshuffle.typewriterview.TypeWriterView
             android:id="@+id/Welcome"
